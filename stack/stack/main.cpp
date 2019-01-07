@@ -10,12 +10,12 @@ typedef struct
 //创建栈
 Stack * init(int n)
 {
-    if(n <= 0)
+    if(n < 0)
     {
         printf("请输入正确的栈大小!\n");
     }
     Stack *p = (Stack *)malloc(sizeof(Stack) + sizeof(int)*n );
-    p->top = -1;
+    p->top = 0;
     return p;
 }
 
@@ -27,7 +27,7 @@ void PushStack(Stack *p,int data)
 
 int PopStack(Stack *p)
 {
-    (p->top)--;
+     return (p->data[(p->top)--]);
 }
 
 void LookStackTop(Stack *p)
@@ -37,13 +37,8 @@ void LookStackTop(Stack *p)
 
 void Print(Stack *p)
 {
-    if(p->top == -1)
-    {
-        printf("empty stack\n");
-        return ;
-    }
     int i = p->top;
-    while(i > -1)
+    while(i > 0)
     {
         printf("---->%d\n",p->data[i--]);
     }
@@ -64,25 +59,3 @@ int main()
     LookStackTop(a);
     return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
