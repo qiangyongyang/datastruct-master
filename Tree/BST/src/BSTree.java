@@ -3,6 +3,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
+
 /*
  *							5
  *						   / \
@@ -120,7 +121,7 @@ public class BSTree {
 			cur = s.peek();
 			if ((cur.lchild == null && cur.rchild == null)
 					|| (pre != null && (pre == cur.lchild || pre == cur.rchild))) {
-			 //如果当前结点没有孩子结点或者孩子节点都已被访问过
+				// 如果当前结点没有孩子结点或者孩子节点都已被访问过
 				System.out.print(cur.data + " ");
 				s.pop();
 				pre = cur;
@@ -134,54 +135,50 @@ public class BSTree {
 			}
 		}
 	}
-	
-	
-	
-	public void transLevel(Node root){
-		Queue<Node > q= new LinkedList<Node>();
+
+	public void transLevel(Node root) {
+		Queue<Node> q = new LinkedList<>();
 		Node p;
-		if(root !=null){
-			System.out.print(root.data+" ");
+		if (root != null) {
+			System.out.print(root.data + " ");
 		}
 		q.add(root);
-		while(!q.isEmpty()){
-			p=q.peek();
+		while (!q.isEmpty()) {
+			p = q.peek();
 			q.poll();
-			if(p.lchild!=null){
-				System.out.print(p.lchild.data+" ");
+			if (p.lchild != null) {
+				System.out.print(p.lchild.data + " ");
 				q.add(p.lchild);
 			}
-			if(p.rchild!=null){
-				System.out.print(p.rchild.data+" ");
+			if (p.rchild != null) {
+				System.out.print(p.rchild.data + " ");
 				q.add(p.rchild);
 			}
 		}
 	}
-	
-	public int AllNode(Node root){
-		if(root == null){
+
+	public int AllNode(Node root) {
+		if (root == null) {
 			return 0;
 		}
-		return 1+AllNode(root.lchild)+AllNode(root.rchild);
+		return 1 + AllNode(root.lchild) + AllNode(root.rchild);
 	}
-	
-	public int LeafNode(Node root){
-		if(root == null)
+
+	public int LeafNode(Node root) {
+		if (root == null)
 			return 0;
-		else if(root.lchild==null && root.rchild==null)
+		else if (root.lchild == null && root.rchild == null)
 			return 1;
 		else
-			return LeafNode(root.lchild)+LeafNode(root.rchild);
+			return LeafNode(root.lchild) + LeafNode(root.rchild);
 	}
-	
-	public int heigh(Node root){
-		if(root == null){
+
+	public int heigh(Node root) {
+		if (root == null) {
 			return 0;
 		}
-		return 1+Math.max(heigh(root.lchild),heigh(root.rchild));
+		return 1 + Math.max(heigh(root.lchild), heigh(root.rchild));
 	}
-	
-	
 
 	public static void main(String[] args) {
 		BSTree bst = new BSTree();
@@ -212,18 +209,17 @@ public class BSTree {
 		System.out.println("二叉树后序遍历无递归：");
 		bst.PostOrderWithoutDigui(root);
 		System.out.println();
-		
-		
+
 		System.out.println("二叉树层次遍历：");
 		bst.transLevel(root);
 		System.out.println();
-		
+
 		System.out.println("二叉树总结点为：");
 		System.out.println(bst.AllNode(root));
-		
+
 		System.out.println("二叉树叶子结点为：");
 		System.out.println(bst.LeafNode(root));
-		
+
 		System.out.println("二叉树深度为：");
 		System.out.println(bst.heigh(root));
 	}
