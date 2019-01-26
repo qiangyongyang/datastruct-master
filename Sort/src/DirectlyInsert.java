@@ -15,10 +15,9 @@ public class DirectlyInsert {
 		int j;
 		for (int i = 1; i < data.length; i++) {
 			int temp = data[i]; // 每趟将data[i]插入到前面的排序子序列中
-			for (j = i - 1; j >= 0 && temp < data[j]; j--) {
-				if (temp < data[j]) { // 将前面较大的元素向后移动
-					data[j + 1] = data[j];
-				}
+			for (j = i - 1; j >= 0 && data[j] > temp; j--) {
+				// 将前面较大的元素向后移动
+				data[j + 1] = data[j];
 			}
 			data[j + 1] = temp; // temp值到达插入位
 		}

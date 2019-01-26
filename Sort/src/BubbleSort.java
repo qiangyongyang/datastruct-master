@@ -8,7 +8,7 @@ public class BubbleSort {
 
 		for (int i = 0; i < data.length; i++) {
 			int swap = 0;   //设置未发生交换标志
-			for (int j = 0; j < data.length - i - 1; j++) {
+			for (int j = i; j < data.length - i - 1; j++) {
 				if (data[j] > data[j + 1]) {
 					int temp;
 					temp = data[j];
