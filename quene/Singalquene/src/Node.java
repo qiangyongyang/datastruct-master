@@ -1,9 +1,9 @@
 
-public class Node<E> {
-	Node<E> next = null;
-	E data;
+public class Node {
+	Node next = null;
+	int data;
 
-	public Node(E data) {
+	public Node(int data) {
 		// TODO Auto-generated constructor stub
 		this.data = data;
 	}

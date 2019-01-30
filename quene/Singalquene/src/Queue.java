@@ -1,14 +1,14 @@
 
-public class Queue<E> {
-	Node<E> head = null;
-	Node<E> tail = null;
+public class Queue {
+	Node head = null;
+	Node tail = null;
 
 	public boolean isEmpty() {
 		return head == tail;
 	}
 
-	public void put(E data) {
-		Node<E> newNode = new Node<E>(data);
+	public void put(int data) {
+		Node newNode = new Node(data);
 		if (head == null && tail == null) {
 			System.out.println("队空");
 			head = tail = newNode;
@@ -25,15 +25,15 @@ public class Queue<E> {
 		head = head.next;
 	}
 	
-	public E numHead(){
+	public int numHead(){
 		if(isEmpty()){
-			return null;
+			return -1;
 		}
 		return head.data;
 	}
 	
 	public int size(){
-		Node <E> temp = head;
+		Node  temp = head;
 		int n = 0;
 		while(temp != null){
 			n++;
@@ -43,7 +43,7 @@ public class Queue<E> {
 	}
 	
 	public void print(){
-		Node <E> temp =head;
+		Node  temp =head;
 		while(temp != null){
 			System.out.println(temp.data);
 			temp = temp.next;
@@ -52,7 +52,7 @@ public class Queue<E> {
 	
 	
 	public static void main(String[] args) {
-		Queue<Integer> q =new Queue<>();
+		Queue q =new Queue();
 		q.put(1);
 		q.put(2);
 		q.put(3);
