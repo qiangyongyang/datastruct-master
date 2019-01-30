@@ -1,7 +1,7 @@
-public class Node <E> {
-	Node <E> next =null;
-	E data;
-	public Node(E data) {
+public class Node {
+	Node next =null;
+	int data;
+	public Node(int data) {
 		this.data = data;
 	}
 }
