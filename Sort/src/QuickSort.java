@@ -13,15 +13,14 @@ public class QuickSort {
 				j--;
 			}
 			data[i] = data[j];
+
 			while (i < j && data[i] < key) {
 				i++;
 			}
 			data[j] = data[i];
 		}
 		data[j] = key;
-
-		
-		sort(data, left, j - 1);
+		sort(data, left, j-1);
 		sort(data, j + 1, right);
 	}
 
