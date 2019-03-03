@@ -12,9 +12,9 @@ public class findData {
 			if (num == data[mid]) {
 				return mid;
 			} else if (num > data[mid]) {
-				left = left + 1;
-			} else if (num < data[mid]) {
-				right = right - 1;
+				left = mid + 1;
+			} else {
+				right = mid - 1;
 			}
 		}
 		return -1;
@@ -41,9 +41,9 @@ public class findData {
 			Scanner cin = new Scanner(System.in);
 			System.out.print("输入查找的值：");
 			int num = cin.nextInt();
-			if(num < data[0] || num > data[data.length-1]){
+			if (num < data[0] || num > data[data.length - 1]) {
 				System.out.println("查询无果");
-			}else{
+			} else {
 				int index1 = findData(0, data.length - 1, num);
 				System.out.println("（无递归）" + "位置在：" + index1);
 
