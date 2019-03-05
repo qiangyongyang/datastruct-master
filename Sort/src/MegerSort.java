@@ -13,11 +13,11 @@ public class MegerSort {
 			}
 		}
 		if (i > mid) {
-			for (int q = j; q <= right; q++) {
+			for (int q = i; q <= right; q++) {
 				data2[k++] = data1[q];
 			}
 		} else {
-			for (int q = i; q <=mid; q++) {
+			for (int q = i; q <= mid; q++) {
 				data2[k++] = data1[q];
 			}
 		}

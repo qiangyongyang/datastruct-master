@@ -8,8 +8,8 @@
 */
 public class DirectlyInsert {
 	public static void sort(int data[]) {
-		if (data.length == 0) {
-			return;
+		if(data.length == 0 || data == null){
+			return ;
 		}
 
 		int j;
@@ -21,7 +21,6 @@ public class DirectlyInsert {
 			}
 			data[j + 1] = temp; // temp值到达插入位
 		}
-
 	}
 
 	public static void main(String[] args) {

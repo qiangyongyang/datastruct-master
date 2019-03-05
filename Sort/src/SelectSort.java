@@ -6,7 +6,7 @@
  */
 public class SelectSort {
 	public static void sort(int data[]) {
-		if (data.length == 0) {
+		if (data.length == 0 || data == null) {
 			return;
 		}
 
@@ -19,8 +19,8 @@ public class SelectSort {
 					flag = j;
 				}
 			}
-			
-			//进行交换，如果位置发生变化，则进行交换
+
+			// 进行交换，如果位置发生变化，则进行交换
 			if (flag != i) {
 				data[flag] = data[i];
 				data[i] = temp;

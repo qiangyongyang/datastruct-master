@@ -15,10 +15,10 @@ public class findFirst_LastIndex {
 			} else if (num < data[mid]) {
 				right = mid - 1;
 			} else {
-				
-				while (mid - 1 >= 0 && num == data[mid - 1]) {
+				while(mid - 1 >= 0 && num == data[mid-1]){
 					mid--;
 				}
+				
 				return mid;
 			}
 		}
